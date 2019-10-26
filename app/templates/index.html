@@ -8,9 +8,6 @@
     </head>
     <body>
         <h1>Today, we are working. Woot woot!</h1>
-        {% for task in taskList %}
-        <div><p>{{ task.Title }} for <b>{{ task.Time }} minutes.</b></p></div>
-        {% endfor %}
     </body>
 
     {% block content %}
@@ -29,15 +26,12 @@
         </form>
 
         <hr>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <ul>
-            {% for message in messages %}
-            <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-        {% endwith %}
+        {% for task in taskList %}
+        <div><p>{{ task.title }} for <b>{{ task.minutes }} minutes.</b></p></div>
+        {% endfor %}
+
+        
+
 
     {% endblock %}
 
