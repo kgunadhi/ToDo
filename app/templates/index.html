@@ -1,0 +1,15 @@
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - ToDo</title>
+        {% else %}
+        <title>Welcome to ToDo!</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Today, we are working. Woot woot!</h1>
+        {% for task in taskList %}
+        <div><p>{{ task.Title }} for <b>{{ task.Time }} minutes.</b></p></div>
+        {% endfor %}
+    </body>
+</html>
