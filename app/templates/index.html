@@ -11,18 +11,18 @@
     </body>
 
     {% block content %}
-        <h1>Sign In</h1>
+        <h1>Add Tasks</h1>
         <form action="" method="post" novalidate>
-            {{ form.hidden_tag() }}
+            {{ form1.hidden_tag() }}
             <p>
-                {{ form.taskTitle.label }}<br>
-                {{ form.taskTitle(size=32) }}
+                {{ form1.taskTitle.label }}<br>
+                {{ form1.taskTitle(size=32) }}
             </p>
             <p>
-                {{ form.taskTime.label }}<br>
-                {{ form.taskTime(size=32) }}
+                {{ form1.taskTime.label }}<br>
+                {{ form1.taskTime(size=32) }}
             </p>
-            <p>{{ form.submit() }}</p>
+            <p>{{ form1.submit() }}</p>
         </form>
 
         <hr>
@@ -30,8 +30,10 @@
         <div><p>{{ task.title }} for <b>{{ task.minutes }} minutes.</b></p></div>
         {% endfor %}
 
-        
-
+        <form action="" method="post" novalidate>
+          {{ form2.hidden_tag() }}
+          <p>{{ form2.submit() }}</p>
+        </form>
 
     {% endblock %}
 
