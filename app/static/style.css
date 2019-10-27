@@ -32,15 +32,18 @@ html{
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
+	color: black;
 }
 
 #h1 {
 	text-align: center;
 	margin: auto;
+	color: black;
 }
 
 #h2 {
 	margin-left: 20%;
+	color: black;
 }
 
 form {

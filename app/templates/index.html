@@ -10,29 +10,31 @@
 {% block content %}
 <div id = "content">
   <center>
-    <div><img src="{{ url_for('static', filename='toast.png') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="Bready, Set, Go!"></div>
-            <form action="" method="post" novalidate>
+    <div><img src="{{ url_for('static', filename='toast.jpeg') }}" style="width:347px;height:250px;">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Bready, Set, Go!"></div>
+          <form action="" method="post" novalidate>
                 {{ form1.hidden_tag() }}
                     <div id = "h1">{{ form1.taskTitle.label }}</div><br>
-                    {{ form1.taskTitle(size=32) }}<br><br>
+                    {{ form1.taskTitle(size=32) }}<br><br><br>
 
                     <div id = "h1">{{ form1.taskTime.label }}</div><br>
                     {{ form1.taskTime(size=32) }}<br>
-                <p>{{ form1.submit() }}</p>
-            </form>
-          </center>
-
-        <hr>
-        {% for task in taskList: %}
-        <p>{{ task.title }} for <b>{{ task.minutes }} minutes from {{ task.start }} to {{ task.end }}.</b></p>
-        {% endfor %}
+                <p>{{ form1.submit() }}</p><br>
+          </form>
 
         <form action="" method="post" novalidate>
-          {{ form2.hidden_tag() }}
-          <p>{{ form2.taskFinished.label }}
-              {{ form2.taskFinished(size=32) }}</p>
-          <p>{{ form2.submit() }}</p>
+              {{ form2.hidden_tag() }}
+              <p>{{ form2.taskFinished.label }}
+                  {{ form2.taskFinished(size=32) }}</p>
+              <p>{{ form2.submit() }}</p><br>
         </form>
+
+        {% for task in taskList: %}
+        <p>{{ task.title }} for {{ task.minutes }} minutes from {{ task.start }} to {{ task.end }}.</p>
+        {% endfor %}
+  </center>
+
+
       </div>
 {% endblock %}
 </html>
