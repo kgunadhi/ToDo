@@ -12,7 +12,7 @@ html{
 	width: 250px;
 	background: white;
 	border-radius: : 20px;
-	margin-left: 20px;
+	margin: auto;
 }
 
 #titles{
@@ -52,15 +52,32 @@ form {
 	text-align: center;
 }
 
-#add {
-	margin: auto;
-	text-align: center;
-}
-
 .center {
   margin: auto;
   width: 60%;
   border: 3px solid #73AD21;
   padding: 10px;
 	text-align: center;
+}
+
+.button {
+  position: relative;
+  background-color: #F2B99B;
+  border-radius: 8px;
+  border: none;
+  font-size: 14px;
+	font-family: "Montserrat";
+  color: #FFFFFF;
+  padding: 5px;
+  width: 70px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:hover {
+	background-color: #e9967a;
 }
