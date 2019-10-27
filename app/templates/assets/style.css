@@ -1,0 +1,44 @@
+html{
+	background-color: #F2B99B;
+}
+
+#content {
+	font-family: "Montserrat";
+}
+
+.rectangle{
+	height: 30px;
+	width: 250px;
+	background: white;
+	border-radius: : 20px;
+	margin-left: 20px;
+}
+
+#titles{
+	margin-left: 40%;
+	position: absolute;
+	top: 40%;
+}
+
+#boxes {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+#headings {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-left: 35%;
+}
+
+#h1 {
+	margin-left: 0%;
+}
+
+#h2 {
+	margin-left: 20%;
+}

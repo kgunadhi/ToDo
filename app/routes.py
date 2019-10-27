@@ -14,10 +14,11 @@ def index():
         return redirect('/index')
     form2 = FinishedForm()
     if form2.validate_on_submit():
-        first = Task.query.first()
-        if first:
-            db.session.delete(first)
-        db.session.commit()
+        if form2.taskFinished.data == True:
+            first = Task.query.first()
+            if first:
+                db.session.delete(first)
+                db.session.commit()
         return redirect('/index')
     taskList = Task.query.all()
     return render_template('index.html', title='Home', taskList=taskList, form1=form1, form2=form2)

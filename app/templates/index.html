@@ -1,12 +1,14 @@
 <html>
     <head>
-        {% if title %}
-        <title>{{ title }} - ToDo</title>
-        {% else %}
-        <title>Welcome to ToDo!</title>
-        {% endif %}
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="astyle.css">
     </head>
     <body>
+      {% if title %}
+      <title>{{ title }} - ToDo</title>
+      {% else %}
+      <title>Welcome to ToDo!</title>
+      {% endif %}
         <h1>Today, we are working. Woot woot!</h1>
     </body>
 
@@ -26,12 +28,14 @@
         </form>
 
         <hr>
-        {% for task in taskList %}
+        {% for task in taskList: %}
         <div><p>{{ task.title }} for <b>{{ task.minutes }} minutes.</b></p></div>
         {% endfor %}
 
         <form action="" method="post" novalidate>
           {{ form2.hidden_tag() }}
+          <p>{{ form2.taskFinished.label }}
+              {{ form2.taskFinished(size=32) }}</p>
           <p>{{ form2.submit() }}</p>
         </form>
 

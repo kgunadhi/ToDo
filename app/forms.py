@@ -8,4 +8,5 @@ class TaskForm(FlaskForm):
     submit = SubmitField('Add')
 
 class FinishedForm(FlaskForm):
-    submit = SubmitField('Finished with top task')
+    taskFinished = BooleanField('Finished the top task? ', validators=[DataRequired()])
+    submit = SubmitField('Yay!')
