@@ -1,35 +1,30 @@
+<!DOCTYPE html>
 <html>
-    <head>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-      <link rel="stylesheet" type="text/css" href="astyle.css">
-    </head>
-    <body>
-      {% if title %}
-      <title>{{ title }} - ToDo</title>
-      {% else %}
-      <title>Welcome to ToDo!</title>
-      {% endif %}
-        <h1>Today, we are working. Woot woot!</h1>
-    </body>
+{% block head %}
+  <title>ToDo</title>
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+{% endblock %}
 
-    {% block content %}
-        <h1>Add Tasks</h1>
-        <form action="" method="post" novalidate>
-            {{ form1.hidden_tag() }}
-            <p>
-                {{ form1.taskTitle.label }}<br>
-                {{ form1.taskTitle(size=32) }}
-            </p>
-            <p>
-                {{ form1.taskTime.label }}<br>
-                {{ form1.taskTime(size=32) }}
-            </p>
-            <p>{{ form1.submit() }}</p>
-        </form>
+{% block content %}
+<div id = "content">
+  <center>
+    <div><img src="{{ url_for('static', filename='toast.png') }}"><img src="{{ url_for('static', filename='logo.png') }}" alt="Bready, Set, Go!"></div>
+            <form action="" method="post" novalidate>
+                {{ form1.hidden_tag() }}
+                    <div id = "h1">{{ form1.taskTitle.label }}</div><br>
+                    {{ form1.taskTitle(size=32) }}<br><br>
+
+                    <div id = "h1">{{ form1.taskTime.label }}</div><br>
+                    {{ form1.taskTime(size=32) }}<br>
+                <p>{{ form1.submit() }}</p>
+            </form>
+          </center>
 
         <hr>
         {% for task in taskList: %}
-        <div><p>{{ task.title }} for <b>{{ task.minutes }} minutes.</b></p></div>
+        <p>{{ task.title }} for <b>{{ task.minutes }} minutes from {{ task.start }} to {{ task.end }}.</b></p>
         {% endfor %}
 
         <form action="" method="post" novalidate>
@@ -38,9 +33,6 @@
               {{ form2.taskFinished(size=32) }}</p>
           <p>{{ form2.submit() }}</p>
         </form>
-
-    {% endblock %}
-
-
-
+      </div>
+{% endblock %}
 </html>
